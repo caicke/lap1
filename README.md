@@ -8,7 +8,7 @@ Trabalho desenvolvido durante a disciplina:
 
 ### 1. Componentes <br>
 Integrantes do grupo<br>
-primeiro_componente_do_grupo:email_primeiro_componente@dominio.com<br>
+Caicke Pinheiro: caicke@gmail.com<br>
 segundo_componente_do_grupo:email_segundo_componente@dominio.com<br>
 ...<br>
 
