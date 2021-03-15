@@ -9,7 +9,7 @@ Trabalho desenvolvido durante a disciplina:
 ### 1. Componentes <br>
 Integrantes do grupo<br>
 Caicke Pinheiro: caicke@gmail.com<br>
-segundo_componente_do_grupo:email_segundo_componente@dominio.com<br>
+Eduardo Alves Figueiredo: eduardomatanob@gmail.com<br>
 ...<br>
 
 ### 2.Apresentação dos Datasets (Clássico + Em estudo)<br>
