@@ -10,22 +10,58 @@ Trabalho desenvolvido durante a disciplina:
 Integrantes do grupo<br>
 Caicke Pinheiro: caicke@gmail.com<br>
 Eduardo Alves Figueiredo: eduardomatanob@gmail.com<br>
-...<br>
+Hellesandro Gonzaga de Carvalho: hellesandro@hotmail.com<br>
 
-### 2.Apresentação dos Datasets (Clássico + Em estudo)<br>
-<br>Visão geral das bases de dados<br>
+### 2. Apresentação dos Datasets (Clássico + Em estudo)<br>
+##### Visão geral das bases de dados **Clássica** <br>
+* Seus dados são sobre o que? **R**: Titanic.
+* O que você deseja com este conjunto de dados? **R**: Predizer a capacidade de sobrevivência dos indivíduos.
+* Quais são os tipos de atributos existentes e qual é o atributo alvo? **R**: Survived é o alvo e o restante ajudará a predizer.
 
-> Após obter a(s) base(s) de dados Responda as seguintes perguntas sobre o conjunto de dados:
-* seus dados são sobre o que? 
-* o que você deseja com este conjunto de dados?
-* quais são os tipos de atributos existentes e qual é o atributo alvo? 
-* quais são os problemas existentes?
+| nome_atributo | tipo_atributo | descricao |
+| :------------ |:--------------:|---------:|
+| PassengerId  | Qualitativo nominal| Apenas um ID |
+| Survived     | Qualitativo nominal| Sobreveu sim ou não |
+| Pclass       | Qualitativo ordinal| Classe econômica (1, 2 3) |
+| Name       | Qualitativo nominal| Nome do passageiro |
+| Sex       | Qualitativo nominal| Sexo do passageiro |
+| Age       | Quantitativo discreto| Idade do passageiro |
+| SibSp       | Quantitativo discreto| # de irmãos/conjuges a bordo |
+| Parch       | Quantitativo discreto| # de pais/filgos a bordo |
+| Ticket       | Qualitativo nominal| Número do ticket |
+| Fare       | Quantitativo contínuo| Taxa do passageiro |
+| Cabin       | Qualitativo nominal| Número da cabine |
+| Embarked       | Qualitativo nominal| Local de embarque |
+
+* Quais são os problemas existentes? <br>
+R: 
+
+
+
+<br>
+##### Visão geral das bases de dados **Em estudo** <br>
+
+* seus dados são sobre o que? <br> **R**: Transtorno comum (Depressão)
+* o que você deseja com este conjunto de dados? <br> **R:** Classificar a presença do transtorno de depressão com base em perguntas respondidas por pacientes que possuem potencial comportamento para diagnóstico da depressão.
+* quais são os tipos de atributos existentes e qual é o atributo alvo? <br> **R:** TBD<br>
+
+| representação_do_atributo | tipo_atributo | descrição |
+| :------------ |:-----------:| --------:|
+| 1  | Qualitativo nominal| SIM |
+| 5  | Qualitativo nominal| NAO |
+| 8 ou 998 | Qualitativo nominal| NAO SABE |
+| 9 ou 999  | Qualitativo nominal| RECUSOU |
+
+
+* quais são os problemas existentes? **R:** Muitos NaN, dominínio de valores dos atributos conflitantes<br> 
 * qualidade e clareza: garantir que a semântica dos atributos seja clara (nomes coerentes com os dados, se necessário renomear atributos).
 
 >#### 2.1 Visão geral da base de dados clássica:<br>
->...
+
+
 >#### 2.2 Visão geral da base de dados em estudo:<br>
->... 
+
+
 
 ### 3.Pré-processamento dos Datasets <br>
 
