@@ -14,9 +14,12 @@ Hellesandro Gonzaga de Carvalho: hellesandro@hotmail.com<br>
 
 ### 2. Apresentação dos Datasets (Clássico + Em estudo)<br>
 ##### Visão geral das bases de dados **Clássica** <br>
-* Seus dados são sobre o que? **R**: Titanic.
-* O que você deseja com este conjunto de dados? **R**: Predizer a capacidade de sobrevivência dos indivíduos.
-* Quais são os tipos de atributos existentes e qual é o atributo alvo? **R**: Survived é o alvo e o restante ajudará a predizer.
+* Seus dados são sobre o que?
+<br>**R**: Base de dados com informações sobre os tripulantes do Titanic.
+* O que você deseja com este conjunto de dados?
+<br>**R**: Predizer se um indivíduo sobreviveu, com base nos dados do embarque.
+* Quais são os tipos de atributos existentes e qual é o atributo alvo?
+<br>**R**: Survived é o alvo e o restante ajudará a predizer.
 
 | nome_atributo | tipo_atributo | descricao |
 | :------------ |:--------------:|---------:|
@@ -34,9 +37,8 @@ Hellesandro Gonzaga de Carvalho: hellesandro@hotmail.com<br>
 | Embarked       | Qualitativo nominal| Local de embarque |
 
 * Quais são os problemas existentes? <br>
-R: 
-
-
+**R**: Não achamos uma correlação muito clara entre dois atributos, pela tabela de correlações, o que nos ajudaria na predição. Além disso, alguns campos no formato de
+texto nos atrapalharam na hora de realizar predições.
 
 <br>
 ##### Visão geral das bases de dados **Em estudo** <br>
@@ -68,6 +70,8 @@ R:
 Realize o Pré-processamento e Tratamento de Dados em sua base/dataset.
 
 >#### 3.1 Pré-processamento e tratamento na base de dados clássica:<br>
+>No campo <i>sex</i> haviam alguns valores nulos. Então conferimos o nome do passageiro e, todos que possuíam os pronomes 'Mrs.' ou 'Miss'
+>foram classificados como <i>feminino</i>, caso contrário, foram definidos como sendo do sexo <i>masculino</i>.   
 >...
 >#### 3.2 Pré-processamento e tratamento na base de dados em estudo:<br>
 >...    
