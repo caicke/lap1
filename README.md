@@ -13,56 +13,68 @@ Eduardo Alves Figueiredo: eduardomatanob@gmail.com<br>
 Hellesandro Gonzaga de Carvalho: hellesandro@hotmail.com<br>
 
 ### 2. Apresentação dos Datasets (Clássico + Em estudo)<br>
-##### Visão geral das bases de dados **Clássica** <br>
-* Seus dados são sobre o que?
-<br>**R**: Base de dados com informações sobre os tripulantes do Titanic.
-* O que você deseja com este conjunto de dados?
-<br>**R**: Predizer se um indivíduo sobreviveu, com base nos dados do embarque.
-* Quais são os tipos de atributos existentes e qual é o atributo alvo?
-<br>**R**: Survived é o alvo e o restante ajudará a predizer.
+>#### 2.1 Visão geral da base de dados clássica:<br>
+ * **P:** Seus dados são sobre o que?
+    > **R:** Base de dados com informações sobre os tripulantes do Titanic.
 
-| nome_atributo | tipo_atributo | descricao |
-| :------------ |:--------------:|---------:|
-| PassengerId  | Qualitativo nominal| Apenas um ID |
-| Survived     | Qualitativo nominal| Sobreveu sim ou não |
-| Pclass       | Qualitativo ordinal| Classe econômica (1, 2 3) |
-| Name       | Qualitativo nominal| Nome do passageiro |
-| Sex       | Qualitativo nominal| Sexo do passageiro |
-| Age       | Quantitativo discreto| Idade do passageiro |
-| SibSp       | Quantitativo discreto| # de irmãos/conjuges a bordo |
-| Parch       | Quantitativo discreto| # de pais/filhos a bordo |
-| Ticket       | Qualitativo nominal| Número do ticket |
-| Fare       | Quantitativo contínuo| Taxa do passageiro |
-| Cabin       | Qualitativo nominal| Número da cabine |
-| Embarked       | Qualitativo nominal| Local de embarque |
+* **P:** O que você deseja com este conjunto de dados?
+  
+  > **R:** Predizer se um indivíduo sobreviveu, com base nos dados do embarque.
 
-* Quais são os problemas existentes? <br>
-**R**: Não achamos uma correlação muito clara entre dois atributos, pela tabela de correlações, o que nos ajudaria na predição. Além disso, alguns campos no formato de
+* **P:** Quais são os tipos de atributos existentes e qual é o atributo alvo?
+    > **R:** Survived é o alvo e o restante ajudará a predizer.
+
+    | nome_atributo | tipo_atributo | descricao |
+    | :------------ |:--------------:|---------:|
+    | PassengerId  | Qualitativo nominal| Apenas um ID |
+    | Survived     | Qualitativo nominal| Sobreveu sim ou não |
+    | Pclass       | Qualitativo ordinal| Classe econômica (1, 2 3) |
+    | Name       | Qualitativo nominal| Nome do passageiro |
+    | Sex       | Qualitativo nominal| Sexo do passageiro |
+    | Age       | Quantitativo discreto| Idade do passageiro |
+    | SibSp       | Quantitativo discreto| # de irmãos/conjuges a bordo |
+    | Parch       | Quantitativo discreto| # de pais/filhos a bordo |
+    | Ticket       | Qualitativo nominal| Número do ticket |
+    | Fare       | Quantitativo contínuo| Taxa do passageiro |
+    | Cabin       | Qualitativo nominal| Número da cabine |
+    | Embarked       | Qualitativo nominal| Local de embarque |
+
+<br>
+
+* **P:** Quais são os problemas existentes? 
+    > **R:** Não achamos uma correlação muito clara entre dois atributos, pela tabela de correlações, o que nos ajudaria na predição. Além disso, alguns campos no formato de
 texto nos atrapalharam na hora de realizar predições.
 
 <br>
-##### Visão geral das bases de dados **Em estudo** <br>
-
-* seus dados são sobre o que? <br> **R**: Transtorno comum (Depressão)
-* o que você deseja com este conjunto de dados? <br> **R:** Classificar a presença do transtorno de depressão com base em perguntas respondidas por pacientes que possuem potencial comportamento para diagnóstico da depressão.
-* quais são os tipos de atributos existentes e qual é o atributo alvo? <br> **R:** TBD<br>
-
-| representação_do_atributo | tipo_atributo | descrição |
-| :------------ |:-----------:| --------:|
-| 1  | Qualitativo nominal| SIM |
-| 5  | Qualitativo nominal| NAO |
-| 8 ou 998 | Qualitativo nominal| NAO SABE |
-| 9 ou 999  | Qualitativo nominal| RECUSOU |
-
-
-* quais são os problemas existentes? **R:** Muitos NaN, dominínio de valores dos atributos conflitantes<br> 
-* qualidade e clareza: garantir que a semântica dos atributos seja clara (nomes coerentes com os dados, se necessário renomear atributos).
-
->#### 2.1 Visão geral da base de dados clássica:<br>
-
 
 >#### 2.2 Visão geral da base de dados em estudo:<br>
 
+* **P:** seus dados são sobre o que?
+    > **R:** Transtorno comum (Depressão)
+
+* **P:** o que você deseja com este conjunto de dados? 
+    > **R:** Predizer a presença do transtorno de depressão com base em perguntas respondidas por pacientes com comportamento considerado suficiente para diagnóstico do transtorno comum de depressão.
+* **P:** quais são os tipos de atributos existentes e qual é o atributo alvo? 
+    > **R:** O atributo alvo é o **dsm_mddh**, ele indica o diagnóstico realizado pelo entrevistador em relação a presença da depressão ou não. Considerando que são mais de 300 atributos, nós fizemos alguns pré-processamentos e selecionamos nesse primeiro momento os 10 melhores atributos. <br>Confira na tabela abaixo: <br>
+
+    | nome_atributo | tipo_atributo | descricao |
+    | :------------ |:-----------:| --------:|
+    | SC21  | Qualitativo nominal| Have you ever in your life had a period of tim... |
+    | SC22  | Qualitativo nominal| Several days or longer felt discouraged about thing... |
+    | SC23 | Qualitativo nominal| Several days or longer lost interest in things enjoyed |
+    | CC4  | Qualitativo nominal| During the past 30 days, how many days did you... |
+    | CC5  | Qualitativo nominal| During the past 12 months, how many times have... |
+    | CC49A  | Quantitativo discreto| # visits doctor past year |
+    | CC49C  | Quantitativo discreto| # visits to medical specialist like cardiologist pa... |
+    | CC49D  | Quantitativo discreto| # visits health professional, nurse or nutritionist... |
+    | CC54  | Qualitativo nominal| think % people helped by seeing professional emotion... |
+    | CC55  | Qualitativo nominal| think % people not get helped who get better |
+
+
+* **P:** quais são os problemas existentes? 
+    > **R:** Muitos NaN, num primeiro momento decimos por não tratá-los e sim tentar convergir um modelo com as mais características que possuem poucou ou nenhum NaN. É bem provável que existam outliers mas não chegamos neste passo, também pareceu que valores de porcentagem não foram representados com vírgula, por exemplo, um valor 99,8 aparece como 998. Foi uma análise muito breve, esse 998 também pode na verdade significar "não sei", são avaliações que pretendemos fazer para o próximo esforço de sprint. <br> 
+
+* qualidade e clareza: garantir que a semântica dos atributos seja clara (nomes coerentes com os dados, se necessário renomear atributos).
 
 
 ### 3.Pré-processamento dos Datasets <br>
@@ -78,11 +90,24 @@ Realize o Pré-processamento e Tratamento de Dados em sua base/dataset.
     os valores em números (1, 2 ou 3). Além disso, removemos os dois registros que possuíam um valor nulo para <i>embarked</i>.</li>
     
 </ul>
+
 ![cabin-nulos](https://user-images.githubusercontent.com/37307708/111407251-54cdb480-86b2-11eb-904e-9b6bfc4285e5.png)
 
 
+<br>
+
 >#### 3.2 Pré-processamento e tratamento na base de dados em estudo:<br>
->...    
+* Nós removemos as colunas completamente na presença de apenas um NaN ou mais. Não é a melhor abordagem mas foi feito para atender o prazo, esse é um corte bem significativo que deve ser avaliado antes da aplicação. Essa remoção de NaNs resultou numa redução de 337 atributos para 79;
+Note pela cor amarela a quantidade de valores nulos antes e depois.
+###### Antes
+![emestudo_heatmap_nan_antes](./images/emestudo_heatmap_nan1.png)
+
+###### Depois
+![emestudo_heatmap_nan_depois](./images/emestudo_heatmap_nan2.png)]
+
+* Com o objetivo de diminuir ainda mais a quantidade de atributos que serão avaliadas pelo modelo, utilizamos um método de seleção de características do `sklearn` chamado `SelectKBest`, selecionando dos 79 atributos, apenas 10. É um chute inicial ainda não sabemos se essa é uma quantidade suficiente para atingir boas métricas no modelo. Os atributos selecionados estão exibios na seção 2.1 do seu respectivo dataset.
+
+* **TODO:** Ainda existem muitas tarefas de pré-processamentos a serem realizadas bem como a verificação de outliers e validação do domínio dos atributos...
 
 ### 4.Análise Exploratória dos datasets<br>
 Explore conjunto de dados por meio de uma ferramenta (EDA), destacando em suas observações o que for considerado mais relevante.
@@ -98,7 +123,7 @@ Além disso, através do relatório vimos que o número de <i>zeros</i> nos camp
 ![sibsp](https://user-images.githubusercontent.com/37307708/111412511-4b951580-86bb-11eb-8568-68e50ffaf192.png)
 
 >#### 4.2 Análise exploratória na base de dados em estudo:<br>
->...    
+>...  **TO DO**  
 Sugestão: Utilizar ferramentas como Pandas Proffile e Sweetviz , Seaborn e Matplotlib <br>
     
 [Tutorial básico com Seaborn](https://github.com/profmoisesomena/escience_and_tools/blob/master/seaborn/Seaborn_introduction.ipynb "Seaborn Introduction")
