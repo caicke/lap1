@@ -30,7 +30,7 @@ Hellesandro Gonzaga de Carvalho: hellesandro@hotmail.com<br>
 | Sex       | Qualitativo nominal| Sexo do passageiro |
 | Age       | Quantitativo discreto| Idade do passageiro |
 | SibSp       | Quantitativo discreto| # de irmãos/conjuges a bordo |
-| Parch       | Quantitativo discreto| # de pais/filgos a bordo |
+| Parch       | Quantitativo discreto| # de pais/filhos a bordo |
 | Ticket       | Qualitativo nominal| Número do ticket |
 | Fare       | Quantitativo contínuo| Taxa do passageiro |
 | Cabin       | Qualitativo nominal| Número da cabine |
@@ -69,18 +69,34 @@ texto nos atrapalharam na hora de realizar predições.
 
 Realize o Pré-processamento e Tratamento de Dados em sua base/dataset.
 
->#### 3.1 Pré-processamento e tratamento na base de dados clássica:<br>
->No campo <i>sex</i> haviam alguns valores nulos. Então conferimos o nome do passageiro e, todos que possuíam os pronomes 'Mrs.' ou 'Miss'
->foram classificados como <i>feminino</i>, caso contrário, foram definidos como sendo do sexo <i>masculino</i>.   
->...
+#### 3.1 Pré-processamento e tratamento na base de dados clássica:<br>
+<ul>
+    <li>nós eliminamos o campo <i>nome</i> da nossa base de treinos e testes, pois o nome completo
+    iria nos atrapalhar na hora de realizar predições.</li>
+    <li>Como o campo <i>cabin</i> possuía 687 valores nulos, nós também o desconsideramos.</li>
+    <li>O campo <i>embarked</i> só possuía três valores distintos, então usamos um label encoder "manualmente" e transformamos
+    os valores em números (1, 2 ou 3). Além disso, removemos os dois registros que possuíam um valor nulo para <i>embarked</i>.</li>
+    
+</ul>
+![cabin-nulos](https://user-images.githubusercontent.com/37307708/111407251-54cdb480-86b2-11eb-904e-9b6bfc4285e5.png)
+
+
 >#### 3.2 Pré-processamento e tratamento na base de dados em estudo:<br>
 >...    
 
 ### 4.Análise Exploratória dos datasets<br>
 Explore conjunto de dados por meio de uma ferramenta (EDA), destacando em suas observações o que for considerado mais relevante.
 
->#### 4.1 Análise exploratória na base de dados clássica:<br>
->...
+#### 4.1 Análise exploratória na base de dados clássica:<br>
+Usando o Pandas Proffile, conseguimos obter algumas informações relevantes da nossa base clássica: 
+[Report_Titanic.pdf](https://github.com/caicke/lap1/files/6153552/Report_Titanic.pdf)
+![age](https://user-images.githubusercontent.com/37307708/111411718-d2e18980-86b9-11eb-88f7-ef8fc1db374e.png)
+![cabin](https://user-images.githubusercontent.com/37307708/111411757-dffe7880-86b9-11eb-9a59-b6ba7e1df05f.png)
+Como já havíamos observado, haviam muitos registros faltando nos campos <i>age</i> e <i>cabin</i>.<br>
+Além disso, através do relatório vimos que o número de <i>zeros</i> nos campos <i>parch</i> (pais e filhos a bordo) e <i>sibsp</i> (irmãos/conjuges a bordo) eram maioria em seus respectivos campos (76,1% e 68,2%, respectivamente), provando que a maioria dos passageiros não possuíam nenhum tipo de parentesco entre eles.
+![parch](https://user-images.githubusercontent.com/37307708/111412162-a5491000-86ba-11eb-8004-a80f161c95ee.png)
+![sibsp](https://user-images.githubusercontent.com/37307708/111412511-4b951580-86bb-11eb-8568-68e50ffaf192.png)
+
 >#### 4.2 Análise exploratória na base de dados em estudo:<br>
 >...    
 Sugestão: Utilizar ferramentas como Pandas Proffile e Sweetviz , Seaborn e Matplotlib <br>
