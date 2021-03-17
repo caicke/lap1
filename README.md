@@ -14,7 +14,7 @@ Hellesandro Gonzaga de Carvalho: hellesandro@hotmail.com<br>
 
 ### 2. Apresentação dos Datasets (Clássico + Em estudo)<br>
 
-![Link do colab da base de dados clássica](https://colab.research.google.com/drive/1yFG-3XkXxVKyuE63siBg9sbx0sAawBf4#scrollTo=VrZN-PDgFXO7?raw=true "colab-clássico") 
+![Link do colab da base de dados clássica](https://colab.research.google.com/drive/1yFG-3XkXxVKyuE63siBg9sbx0sAawBf4#scrollTo=VrZN-PDgFXO7 "colab-clássico") 
 
 >#### 2.1 Visão geral da base de dados clássica:<br>
  * **P:** Seus dados são sobre o que?
