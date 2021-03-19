@@ -100,6 +100,8 @@ Realize o Pré-processamento e Tratamento de Dados em sua base/dataset.
     <li>O campo <i>sex</i> foi aplicado a técnica de <i>One Hot Encoding</i>, criando assim dois campos chamados <i>sex_female</i>
     e <i>sex_male</i>. Foi utilizado esta técnica para melhor predição do algoritmo. Além disso, o campo <i>sex</i> foi retirado do dataset.</li>
     <li>Foi imputado no campo <i>age</i> a média das idades deste mesmo campo, onde havia valores nulos.</li>
+    <li>Foi aplicada a técnica de <i>Binning</i> no dataset na intenção da obtenção de melhores predições.</li>
+    <li>Foi aplicada a técnica de <i>Balanceamento</i> no dataset na intenção da obtenção de melhores predições.</li>
     
 </ul>
 
