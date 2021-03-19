@@ -90,7 +90,15 @@ Realize o Pré-processamento e Tratamento de Dados em sua base/dataset.
     iria nos atrapalhar na hora de realizar predições.</li>
     <li>Como o campo <i>cabin</i> possuía 687 valores nulos, nós também o desconsideramos.</li>
     <li>O campo <i>embarked</i> só possuía três valores distintos, então usamos um label encoder "manualmente" e transformamos
-    os valores em números (1, 2 ou 3). Além disso, removemos os dois registros que possuíam um valor nulo para <i>embarked</i>.</li>
+    os valores em números (1, 2 ou 3). Além disso, removemos os dois registros que possuíam um valor nulo para <i>embarked</i>.
+    E o campo <i>embarked<i/> foi retirado do dataset</li>
+    <li>O campo <i>ticket</i> foi retirado do dataset por representar apenas um código de identificação da passagem.
+    Sendo assim, este campo tem uma variação muito grande e acaba não ajudando o algoritmo na sua convergência.</li>
+    <li>O campo <i>passengerId</i> foi retirado do dataset por representar apenas uma numeração dos passageiros
+    (partindo do um até o numero máximo de passageiros). Sendo assim, este campo tem uma variação muito grande e acaba 
+    não ajudando o algoritmo na sua convergência.</li>
+    <li>O campo <i>sex</i> foi aplicado a técnica de <i>One Hot Encoding<i/>, criando assim dois campos chamados <i>sex_female<i/>
+    e <i>sex_male<i/>. Foi utilizado esta técnica para melhor predição do algoritmo. Além disso, o campo <i>sex<i/> foi retirado do dataset.</li>
     
 </ul>
 
