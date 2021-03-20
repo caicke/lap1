@@ -59,20 +59,20 @@ texto nos atrapalharam na hora de realizar predições.
 
     | nome_atributo | tipo_atributo | descricao |
     | :------------ |:-----------:| --------:|
+    | SC20  | Qualitativo nominal| Had attack of fear/panic |
     | SC21  | Qualitativo nominal| Have you ever in your life had a period of tim... |
     | SC22  | Qualitativo nominal| Several days or longer felt discouraged about thing... |
     | SC23 | Qualitativo nominal| Several days or longer lost interest in things enjoyed |
-    | CC4  | Qualitativo nominal| During the past 30 days, how many days did you... |
-    | CC5  | Qualitativo nominal| During the past 12 months, how many times have... |
-    | CC49A  | Quantitativo discreto| # visits doctor past year |
+    | SC25  | Qualitativo nominal| Several days or longer very irritable/grumpy/bad mood |
+    | SC26  | Qualitativo nominal| Worried a lot more about things than other people |
+    | CC4  | Quantitativo discreto| During the past 30 days, how many days did you... |
+    | CC20A  | Qualitativo nominal| Problems getting to sleep past 12 months |
+    | CC49B  | Quantitativo discreto| # visits to a psychiatrist past 12 months |
     | CC49C  | Quantitativo discreto| # visits to medical specialist like cardiologist pa... |
-    | CC49D  | Quantitativo discreto| # visits health professional, nurse or nutritionist... |
-    | CC54  | Qualitativo nominal| think % people helped by seeing professional emotion... |
-    | CC55  | Qualitativo nominal| think % people not get helped who get better |
 
 
 * **P:** quais são os problemas existentes? 
-    > **R:** Muitos NaN, num primeiro momento decimos por não tratá-los e sim tentar convergir um modelo com as mais características que possuem poucou ou nenhum NaN. É bem provável que existam outliers mas não chegamos neste passo, também pareceu que valores de porcentagem não foram representados com vírgula, por exemplo, um valor 99,8 aparece como 998. Foi uma análise muito breve, esse 998 também pode na verdade significar "não sei", são avaliações que pretendemos fazer para o próximo esforço de sprint. <br> 
+    > **R:** O maior problema foi a grande quantidade de NaN, principalmente nas questões que são diretamente relacionadas com a depressão, porém decidimos por não tratá-los diretamente e sim tentar convergir um modelo com as demais características que possuem poucou ou nenhum NaN. <br> 
 
 * qualidade e clareza: garantir que a semântica dos atributos seja clara (nomes coerentes com os dados, se necessário renomear atributos).
 
@@ -81,7 +81,7 @@ texto nos atrapalharam na hora de realizar predições.
 
 Realize o Pré-processamento e Tratamento de Dados em sua base/dataset.
 
-#### 3.1 Pré-processamento e tratamento na base de dados clássica:<br>
+>#### 3.1 Pré-processamento e tratamento na base de dados clássica:<br>
 <ul>
     <li>nós eliminamos o campo <i>nome</i> da nossa base de treinos e testes, pois o nome completo
     iria nos atrapalhar na hora de realizar predições.</li>
@@ -97,22 +97,37 @@ Realize o Pré-processamento e Tratamento de Dados em sua base/dataset.
 <br>
 
 >#### 3.2 Pré-processamento e tratamento na base de dados em estudo:<br>
-* Nós removemos as colunas completamente na presença de apenas um NaN ou mais. Não é a melhor abordagem mas foi feito para atender o prazo, esse é um corte bem significativo que deve ser avaliado antes da aplicação. Essa remoção de NaNs resultou numa redução de 337 atributos para 79;
+##### Remoção de valores nulos
+* Nós removemos as colunas completamente na presença de apenas um NaN ou mais. Não é a melhor abordagem mas foi feito para atender o prazo, esse é um corte bem significativo que deve ser avaliado antes da aplicação. Essa remoção de NaNs resultou numa redução de 337 atributos para 79.<br>
 Note pela cor amarela a quantidade de valores nulos antes e depois.
 ###### Antes
 ![emestudo_heatmap_nan_antes](./images/emestudo_heatmap_nan1.png)
 
 ###### Depois
-![emestudo_heatmap_nan_depois](./images/emestudo_heatmap_nan2.png)]
+![emestudo_heatmap_nan_depois](./images/emestudo_heatmap_nan2.png)
 
-* Com o objetivo de diminuir ainda mais a quantidade de atributos que serão avaliadas pelo modelo, utilizamos um método de seleção de características do `sklearn` chamado `SelectKBest`, selecionando dos 79 atributos, apenas 10. É um chute inicial ainda não sabemos se essa é uma quantidade suficiente para atingir boas métricas no modelo. Os atributos selecionados estão exibios na seção 2.1 do seu respectivo dataset.
 
-* **TODO:** Ainda existem muitas tarefas de pré-processamentos a serem realizadas bem como a verificação de outliers e validação do domínio dos atributos...
+##### Avaliando a presença de Outliers
+* Nesta etapa "pegamos um atalho", ao invés de tratar os outliers de todas características disponíveis, nós usamos o método de seleção de características citado na próxima seção **Seleção de características**, ANTES para diminuir o volume de características que deveríamos tratar. 
+* Consideramos o cenário em que os dados foram obtidos, nós ignoramos os atributos de valores nominais pois entendemos que seria muito difícil determinar um outlier. Dos atributos numéricos e contínuos nós observamos a presença de valores nominais misturados, nesse caso nós removemos todos os registros com valores nominais em atributos numéricos e contínuos. Essa operação resultou na redução de registros de 5037 para 4223.
+
+Vale ressaltar que esse tipo de manobra é imprudente como um tiro no escuro. Por exemplo, imagine se tivéssemos um atributo com um potencial incrível para o modelo mas que ele está com alta quantidade de outliers, mas outros atributos que são menos interessantes para o modelo tem pouco outlier, é possível que ao aplicar uma seleção de características esse atributo de "potencial incrível" fique de fora. O inverso desse cenário também é verdadeiro dependendo do modelo!
+
+>**SPOILER:** Alguns dos atributos que inicialmente se mostraram melhores, depois da remoção dos outliers, não foram mais relacionados entre as melhores características.
+
+##### Balanceamento do Dataset
+* O dataset estava bastante desbalanceado, do total de 4223 registros, 3455 representavam o diagnóstico negativo e apenas 768 para positivo. Sabendo disso, balanceamos o dataset em 50/50, sendo 768 registros de cada diagnóstico. Totalizando 1536 registros.
+
+![emestudo_balance](./images/emestudo_balance.png)
+
+
+##### Seleção de características
+* Com o objetivo de diminuir ainda mais a quantidade de atributos que serão avaliadas pelo modelo, utilizamos o método de seleção de características do `sklearn` chamado `SelectKBest` combinado com `chi2` para selecionar os 10 melhores atributos dos 79. É um chute inicial ainda não sabemos se essa é uma quantidade suficiente para atingir boas métricas no modelo. Os atributos selecionados estão exibios na seção 2.1 do seu respectivo dataset.
 
 ### 4.Análise Exploratória dos datasets<br>
 Explore conjunto de dados por meio de uma ferramenta (EDA), destacando em suas observações o que for considerado mais relevante.
 
-#### 4.1 Análise exploratória na base de dados clássica:<br>
+>#### 4.1 Análise exploratória na base de dados clássica:<br>
 Usando o Pandas Proffile, conseguimos obter algumas informações relevantes da nossa base clássica: 
 [Report_Titanic.pdf](https://github.com/caicke/lap1/files/6153552/Report_Titanic.pdf)
 ![age](https://user-images.githubusercontent.com/37307708/111411718-d2e18980-86b9-11eb-88f7-ef8fc1db374e.png)
@@ -123,10 +138,37 @@ Além disso, através do relatório vimos que o número de <i>zeros</i> nos camp
 ![sibsp](https://user-images.githubusercontent.com/37307708/111412511-4b951580-86bb-11eb-8568-68e50ffaf192.png)
 
 >#### 4.2 Análise exploratória na base de dados em estudo:<br>
->...  **TO DO**  
+
 Sugestão: Utilizar ferramentas como Pandas Proffile e Sweetviz , Seaborn e Matplotlib <br>
     
 [Tutorial básico com Seaborn](https://github.com/profmoisesomena/escience_and_tools/blob/master/seaborn/Seaborn_introduction.ipynb "Seaborn Introduction")
+<br>
+######Antes
+Nós utilizamos o Pandas Profiling, porém o relatório dele é bastante extenso e não encaixa bem para essa explicação. Sendo assim nos contentaremos em explicar através do overview.
+
+![emestudo_pprofile_overview](./images/emestudo_pprofile_overview.png)
+
+
+
+* O **número de atributos** presente nesse dataset é bem grande, muito mais que o necessário para convergir um modelo. Por um lado é bom ter uma variedade de opções para escolher os melhores atributos, por outro isso aumenta bastante o trabalho de análise e pré-processamento;
+* O **número de registros**, apesar do bom volume, apenas 1536 (30,49%) registros  foram utilizados porque estavam desbalanceados;
+* A quantidade de **células faltando** é bem expressiva principalmente nas características mais diretas no assunto depressão;
+* Dos **tipos de variáveis** a grande maioria é nominal, inclusive alguns atributos possuem valores categóricos e numéricos, nesses casos nós tratamos.
+
+###### Depois
+
+Considerando a análise anterior, o dataset foi tratado e um novo relatório foi gerado.
+
+![emestudo_pprofile_overview](./images/emestudo_pprofile_overview_depois.png)
+
+* A única consideração que gostaríamos de enfatizar neste relatório é a indicação de **registros duplicados** que acreditamos ser um erro.
+
+![emestudo_pprofile_overview](./images/emestudo_pprofile_warnings_depois.png)
+
+* Dos 10 atributos selecionados para o modelo, 2 apareceram no relatório de **Warnings** porém concordamos em desconsiderar o "aviso" pois é possível que os valores sejam 0 com bastante frequência nesses casos (``CC49B`` e ``CC49C``);
+* Ainda existe uma preocupação em especial com ``SC2`` e ``CC5`` pois aparentam estar enviesados e de certa forma não tratamos esses casos. Podem ser atributos úteis para um modelo com mais de 10 atributos. 
+
+<br>
 
 ># Marco de Entrega 01: Itens do Sprint 01 <br>
     
