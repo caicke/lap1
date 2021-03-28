@@ -208,9 +208,13 @@ Na árvore de decisão existem os nós, os ramos e as folhas. Onde, os nós cont
 
 **Complexidade do algoritmo de árvore de decisão**
 
-O( n{samples} n{features} log(n{samples}) )
+O( n{samples} * n{features} * log(n{samples}) )
 
-Onde o n{samples} quer dizer o número de registros do dataset e o n{features} quer dizer o número de colunas do dataset.
+Onde:
+* Log quer dizer o logaritmo de n{samples}
+* O n{samples} quer dizer o número de registros do dataset;
+* n{features} quer dizer o número de colunas do dataset;
+
 
 **performance para treino e para execução**
 
