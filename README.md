@@ -222,7 +222,7 @@ Executando o algoritmo de árvore de decisão na base de dados do Titanic, o tem
 
 Onde a figura 3 ilustra as funções de pedotransferência obtidas por árvore de decisão, a partir de um conjunto de dados de solos do sul do Amazonas, para estimar a microporosidade do solo, utilizando-se neste caso, a granulometria e o teor de carbono orgânico.
 
-![parch](https://user-images.githubusercontent.com/37307708/111412162-a5491000-86ba-11eb-8004-a80f161c95ee.png)
+![parch](https://github.com/caicke/lap1/blob/main/images/figura%203.png)
 
 #### C) Existem requisitos/premissas necessárias para aplicação do algoritmo, quais são?
 
