@@ -211,9 +211,9 @@ Na árvore de decisão existem os nós, os ramos e as folhas. Onde, os nós cont
 O( n{samples} * n{features} * log(n{samples}) )
 
 Onde:
-* Log quer dizer o logaritmo de n{samples}
+* Log quer dizer o logaritmo de n{samples};
 * O n{samples} quer dizer o número de registros do dataset;
-* n{features} quer dizer o número de colunas do dataset;
+* n{features} quer dizer o número de colunas do dataset.
 
 
 **performance para treino e para execução**
