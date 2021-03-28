@@ -188,7 +188,7 @@ Considerando a análise anterior, o dataset foi tratado e um novo relatório foi
 ># Marco de Entrega 01: Itens do Sprint 01 <br>
     
 ### 5.Estudo dos algoritmos previamente definidos para a pesquisa
-  (explicação/teoria)<br>
+  
   >#### 5.1 Visão geral sobre cada um dos algoritmos:<br>
     A) Explicação sobre o algoritmo/método de classificação adotado
     (como funciona, performance/complexidade para treino e para execução, etc...)
@@ -196,7 +196,48 @@ Considerando a análise anterior, o dataset foi tratado e um novo relatório foi
     C) Existem requisitos/premissas necessárias para aplicação do algoritmo, quais são?
     D) Aplicar os modelos estudados em bases de dados clássicas como Iris/Titanic 
     (no caso de desejar utilizar outra base consultar o professor)
-    
+
+### Árvore de decisão
+
+#### A) Explicação sobre o algoritmo/método de classificação adotado
+    Primeiramente, antes de se utilizar o algoritmo que está sendo analisado, é preciso conceituar este algoritmo de árvore de decisão. Árvore de decisão é um método de aprendizado supervisionado não paramétrico usado para classificação e regressão. Alguns métodos usados pelo algoritmo irão procurar as variáveis que possuem maior relação com a variável target(alvo) e assim, colocá-las no topo da árvore.
+    Um destes métodos é a entropia. E o que é entropia? Com a entropia, o algoritmo analisa como os nossos dados estão distribuídos nas variáveis preditoras de acordo com a variação do nosso target. De acordo com a entropia, o algoritmo observa o ganho de informação das variáveis. A que tiver um maior ganho de informação vai ser a variável do primeiro nó da árvore. O ganho de informação é a medida do quanto estão relacionados os dados da variável preditora com os dados da nossa target. Outro método também utilizado é o índice GINI, sendo que este método é parecido com a análise da entropia, mudando somente a forma de realização.
+
+    Na árvore de decisão existem os nós, os ramos e as folhas. Onde, os nós contêm as perguntas para ser tomada a decisão, os ramos são os caminhos por onde o algoritmo segue e as folhas são os nós que contém uma resposta. O algoritmo irá percorrer a árvore vendo as possibilidades possíveis quando para em cada nó da árvore, toma a decisão certa e assim sucessivamente até parar em nó folha, onde enfim obteve o seu resultado. Isto pode ser considerado aprendizado de máquina? Uma árvore de decisão sozinha não é aprendizado de máquina, já que um ser humano pode criar uma árvore e tomar a decisão por si só. Porém, o processo de construção automática utilizando uma base de dados, é sim, um aprendizado de máquina.
+
+**Complexidade do algoritmo de árvore de decisão**
+
+    O( n{samples} n{features} log(n{samples}) )
+
+    Onde o n{samples} quer dizer o número de registros do dataset e o n{features} quer dizer o número de colunas do dataset.
+
+**performance para treino e para execução**
+
+Executando o algoritmo de árvore de decisão na base de dados do Titanic, o tempo de duração obtido foi de 0.0028581619262695312 segundos.
+
+#### B) Estudar e apresentar exemplo de aplicações com algoritmos
+
+    <i>Mapeamento digital de classes e atributos de solos</i> é uma técnica para facilitar a coleta, armazenamento, análise, interpretação e confecção de mapas de solos. O uso de técnicas quantitativas para predição espacial em mapeamento de solos e de seus atributos vêm crescendo nesta última década, devido ao avanço dos computadores, o que permite usar de maneira mais rápida e confortável. Uma destas técnicas é justamente o algoritmo de árvore de decisão. 
+
+    Onde a figura 3 ilustra as funções de pedotransferência obtidas por árvore de decisão, a partir de um conjunto de dados de solos do sul do Amazonas, para estimar a microporosidade do solo, utilizando-se neste caso, a granulometria e o teor de carbono orgânico.
+
+![parch](https://user-images.githubusercontent.com/37307708/111412162-a5491000-86ba-11eb-8004-a80f161c95ee.png)
+
+#### C) Existem requisitos/premissas necessárias para aplicação do algoritmo, quais são?
+
+    Não foram encontrados requisitos ou restrições para a aplicação do algoritmo. É preciso somente ter a base de dados na qual será aplicada o algoritmo.
+
+#### D) Aplicar os modelos estudados em bases de dados clássicas como Iris/Titanic
+
+     O modelo de árvore de decisão foi aplicado na base de dados Titanic, com o pré-processamento já realizado na base de dados. Pode ser observado no link para o colab abaixo:
+
+Link para o colab: https://colab.research.google.com/drive/1Ij-jIAXwRj1cWMV7I9pRJ0_E-dzli-YO?usp=sharing
+
+#### Referências utilizadas para o algoritmo de árvore de decisão:
+
+    Mapeamento digital de classes e atributos de solos: métodos, paradigmas e novas técnicas. Disponível em:<https://www.embrapa.br/busca-de-publicacoes/-/publicacao/338308/mapeamento-digital-de-classes-e-atributos-de-solos-metodos-paradigmas-e-novas-tecnicas>. Acessado em: 27/03/2021.
+
+
 >#### 5.2 Qual dos algoritmos estudados (não visão do grupo, com base nos resultados obtidos) é o mais recomendado para a base de dados clássica utilizada (explicar):<br>
 >...
 >#### 5.3 Qual dos algoritmos estudados (não visão do grupo) provavelmente será o mais recomendado para a base de dados em estudo (explicar):<br>
