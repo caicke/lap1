@@ -197,30 +197,29 @@ Considerando a análise anterior, o dataset foi tratado e um novo relatório foi
     D) Aplicar os modelos estudados em bases de dados clássicas como Iris/Titanic 
     (no caso de desejar utilizar outra base consultar o professor)
 
-### Árvore de decisão
+>#### 5.1.1 Árvore de decisão
 
-#### A) Explicação sobre o algoritmo/método de classificação adotado
+##### A) Explicação sobre o algoritmo/método de classificação adotado
 
 Primeiramente, antes de se utilizar o algoritmo que está sendo analisado, é preciso conceituar este algoritmo de árvore de decisão. Árvore de decisão é um método de aprendizado supervisionado não paramétrico usado para classificação e regressão. Alguns métodos usados pelo algoritmo irão procurar as variáveis que possuem maior relação com a variável target(alvo) e assim, colocá-las no topo da árvore.
 Um destes métodos é a entropia. E o que é entropia? Com a entropia, o algoritmo analisa como os nossos dados estão distribuídos nas variáveis preditoras de acordo com a variação do nosso target. De acordo com a entropia, o algoritmo observa o ganho de informação das variáveis. A que tiver um maior ganho de informação vai ser a variável do primeiro nó da árvore. O ganho de informação é a medida do quanto estão relacionados os dados da variável preditora com os dados da nossa target. Outro método também utilizado é o índice GINI, sendo que este método é parecido com a análise da entropia, mudando somente a forma de realização.
 
 Na árvore de decisão existem os nós, os ramos e as folhas. Onde, os nós contêm as perguntas para ser tomada a decisão, os ramos são os caminhos por onde o algoritmo segue e as folhas são os nós que contém uma resposta. O algoritmo irá percorrer a árvore vendo as possibilidades possíveis quando para em cada nó da árvore, toma a decisão certa e assim sucessivamente até parar em nó folha, onde enfim obteve o seu resultado. Isto pode ser considerado aprendizado de máquina? Uma árvore de decisão sozinha não é aprendizado de máquina, já que um ser humano pode criar uma árvore e tomar a decisão por si só. Porém, o processo de construção automática utilizando uma base de dados, é sim, um aprendizado de máquina.
 
-**Complexidade do algoritmo de árvore de decisão**
+- **Complexidade do algoritmo de árvore de decisão**
 
-O( n{samples} * n{features} * log(n{samples}) )
+    O( n{samples} * n{features} * log(n{samples}) )
 
-Onde:
-* Log quer dizer o logaritmo de n{samples};
-* O n{samples} quer dizer o número de registros do dataset;
-* n{features} quer dizer o número de colunas do dataset.
+    Onde:
+    * Log quer dizer o logaritmo de n{samples};
+    * O n{samples} quer dizer o número de registros do dataset;
+    * n{features} quer dizer o número de colunas do dataset. <br>
 
+- **Performance para treino e para execução**
 
-**performance para treino e para execução**
+    Executando o algoritmo de árvore de decisão na base de dados do Titanic, o tempo de duração obtido foi de 0.0028581619262695312 segundos.
 
-Executando o algoritmo de árvore de decisão na base de dados do Titanic, o tempo de duração obtido foi de 0.0028581619262695312 segundos.
-
-#### B) Estudar e apresentar exemplo de aplicações com algoritmos
+##### B) Estudar e apresentar exemplo de aplicações com algoritmos
 
 <i>Mapeamento digital de classes e atributos de solos</i> é uma técnica para facilitar a coleta, armazenamento, análise, interpretação e confecção de mapas de solos. O uso de técnicas quantitativas para predição espacial em mapeamento de solos e de seus atributos vêm crescendo nesta última década, devido ao avanço dos computadores, o que permite usar de maneira mais rápida e confortável. Uma destas técnicas é justamente o algoritmo de árvore de decisão. 
 
@@ -228,23 +227,97 @@ Onde a figura 3 ilustra as funções de pedotransferência obtidas por árvore d
 
 ![parch](https://github.com/caicke/lap1/blob/main/images/figura%203.png)
 
-#### C) Existem requisitos/premissas necessárias para aplicação do algoritmo, quais são?
+##### C) Existem requisitos/premissas necessárias para aplicação do algoritmo, quais são?
 
 Não foram encontrados requisitos ou restrições para a aplicação do algoritmo. É preciso somente ter a base de dados na qual será aplicada o algoritmo.
 
-#### D) Aplicar os modelos estudados em bases de dados clássicas como Iris/Titanic
+##### D) Aplicar os modelos estudados em bases de dados clássicas como Iris/Titanic
 
 O modelo de árvore de decisão foi aplicado na base de dados Titanic, com o pré-processamento já realizado na base de dados. Pode ser observado no link para o colab abaixo:
 
 Link para o colab: https://colab.research.google.com/drive/1Ij-jIAXwRj1cWMV7I9pRJ0_E-dzli-YO?usp=sharing
 
-#### Referências utilizadas para o algoritmo de árvore de decisão:
+Resultado:
+![dt_results](./images/dt_results.png)
+<br>
+
+##### Referências utilizadas para o algoritmo de árvore de decisão:
 
 Mapeamento digital de classes e atributos de solos: métodos, paradigmas e novas técnicas. Disponível em:<https://www.embrapa.br/busca-de-publicacoes/-/publicacao/338308/mapeamento-digital-de-classes-e-atributos-de-solos-metodos-paradigmas-e-novas-tecnicas>. Acessado em: 27/03/2021.
+
+>#### 5.1.2 Random Forest
+##### A) Explicação sobre o algoritmo/método de classificação adotado
+##### B) Estudar e apresentar exemplo de aplicações com algoritmos
+##### C) Existem requisitos/premissas necessárias para aplicação do algoritmo, quais são?
+##### D) Aplicar os modelos estudados em bases de dados clássicas como Iris/Titanic
+Acesse este [link](https://colab.research.google.com/drive/1dhdpeSFVO1tkbbfjyxLZ1JV41zMx_-Kj?usp=sharing) para ver o jupyter notebook. <br>
+Resultado:
+![rf_results](./images/rf_results.png)
+>#### 5.1.3 Regressão Logística
+##### A) Explicação sobre o algoritmo/método de classificação adotado
+A Regressão Logística é uma técnica de Regressão que nos permite estimar a probabilidade associada à ocorrência de determinado evento (alvo) diante de um conjunto de variáveis explanatórias (características independentes). Sabendo disso, essa técnica pode ser usada para analisar e predizer variáveis do tipo “discreta”, “nominal” e “ordinal”.
+
+- **Características** 
+    - Busca estimar a probabilidade da variável dependente (target, y, variável alvo) assumir um determinado valor em função das demais variáveis;
+    - O resultado da análise fica contido num intervalo de 0 a 1, podemos traduzir como Falso e Verdadeiro, mas 0 a 1 é como o valor é interpretado num plano em que a função sigmóide é aplicada;
+    - Usa o estimador Máxima Verossimilhança ou (maximum-likelihood estimation- MLE);
+
+- **Função Logística**
+    - A probabilidade de ocorrência de um evento pode ser estimada diretamente. No caso da variável dependente Y assumir apenas dois possíveis estados (1 ou 0) e haver um conjunto de p variáveis independentes X1, X2, …, Xp, o modelo de regressão logística pode ser escrito da seguinte forma:
+    ![funcao_logistica](./images/funcao_logistica.png)
+    onde, 
+    ![g_de_x](./images/g_de_x.png)
+
+        - Os coeficientes B0 , B1, ..., Bp são estimados a partir do conjunto de dados, pelo método da máxima verossimilhança, em que encontra uma combinação de coeficientes que maximiza a probabilidade da amostra ter sido observada. Utilizando uma certa combinação de coeficientes B e variando os valores de X, observa-se que a curva logística tem um comportamento probabilístico no formato da letra S, o que é uma característica da regressão logística. [(Hosmer e Lemeshow, 1989, Retirado da USP, 2020)](https://edisciplinas.usp.br/pluginfile.php/3769787/mod_resource/content/1/09_RegressaoLogistica.pdf).
+
+            Sendo assim, quando:
+            ![g_de_x_tendencia](./images/g_de_x_tendencia.png)
+
+            ![curva_logistica](./images/curva_logistica.png)
+
+- **Classificação** 
+    - se P(Y=1) >= 0.5 então classifica-se Y=1
+    - se P(Y=1) < 0.5 então classifica-se Y=1
+
+- **Tipos de Regressão Logística** 
+
+    - Existem 3 tipos, a Binária, Multinomial, Ordinal. Para cada uma delas existe uma adaptação do uso da função logística, que não será coberta por este documento. Mas está explicado neste link: [Asel Mendis (2019)](https://www.kdnuggets.com/2019/01/logistic-regression-concise-technical-overview.html).
+        - **Binária**: usada para classificações entre 0 e 1;
+        - **Multinomial**: usada para classificações com mais de 2 categorias. Exemplo: maçãs, laranjas, uvas, bananas;
+        - **Ordinal**: usada para classificações com mais de 2 categorias, em adição, também para targets que possuem uma ordem natural. Exemplo: Alto, médio, baixo;
+
+- **(BONUS) Visão geral da diferença entre Regressão Linear e Regressão Logística**
+
+    - Diferente da Regressão Linear, a Regressão Logística não supõe que os dados estão normalizados, que existe linearidade, e homogeneidade de variância. Esse fato torna o uso da Regressão Logística muito mais amigável, fácil, porque raramente essas suposições são satisfeitas no mundo real.
+    Se aplicadas numa mesma base de dados, por exemplo sobre notas de participantes do ENEM. A Regressão Linear poderia predizer a pontuação dos participantes, enquanto a Regressão Logística poderia classificar se o participante foi “aprovado” ou “não aprovado”.
+
+##### B) Estudar e apresentar exemplo de aplicações com algoritmos
+- **Aplicações clássicas**
+    - [Iris](https://colab.research.google.com/drive/1lWfwpxa5h_oMJECQZ0kNA4hE_fvJ6Cqn?usp=sharing)
+    - [Digits, também conhecido como MNIST](https://colab.research.google.com/drive/1lWfwpxa5h_oMJECQZ0kNA4hE_fvJ6Cqn?usp=sharing)
+    - [HeartDesease](https://colab.research.google.com/drive/1A3SxCl5_yucnNRDZtHLI-LEzGTyL3qLh?usp=sharing)
+- **Aplicação mais complexa**
+    - Previsão de risco na área tributária – calcular a probabilidade do contribuinte ser inadimplente ou adimplente após o parcelamento de tributos. [Dias Filho (2003, Retirado da USP, 2020)](https://edisciplinas.usp.br/pluginfile.php/3769787/mod_resource/content/1/09_RegressaoLogistica.pdf)
+    - Utilizado para classificar se a empresa encontra-se no grupo de empresas solvente ou insolvente. [Matias (2002, Retirado da USP, 2020)](https://edisciplinas.usp.br/pluginfile.php/3769787/mod_resource/content/1/09_RegressaoLogistica.pdf). 
+    - Determinar quais características levam as empresas adotarem o balanced scorecard. [Wanderley (2002, Retirado da USP, 2020)](https://edisciplinas.usp.br/pluginfile.php/3769787/mod_resource/content/1/09_RegressaoLogistica.pdf).
+
+##### C) Existem requisitos/premissas necessárias para aplicação do algoritmo, quais são?
+- **Premissas**
+    - Recomendada para situações em que a variável dependente (target, y, variável alvo) é de natureza dicotômica ou binária;
+    - As variáveis independentes (atributos, classes, x) tanto podem ser categóricas ou não;
+
+##### D) Aplicar os modelos estudados em bases de dados clássicas como Iris/Titanic
+Acesse este [link](https://colab.research.google.com/drive/1dhdpeSFVO1tkbbfjyxLZ1JV41zMx_-Kj?usp=sharing) para ver o jupyter notebook. <br>
+Resultado:
+![lr_results](./images/lr_results.png)
+
 
 
 >#### 5.2 Qual dos algoritmos estudados (não visão do grupo, com base nos resultados obtidos) é o mais recomendado para a base de dados clássica utilizada (explicar):<br>
 >...
+
+Resultado geral:
+![full_results](./images/full_results.png)
 >#### 5.3 Qual dos algoritmos estudados (não visão do grupo) provavelmente será o mais recomendado para a base de dados em estudo (explicar):<br>
 >...
 
