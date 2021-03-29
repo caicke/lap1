@@ -288,7 +288,7 @@ A Regressão Logística é uma técnica de Regressão que nos permite estimar a 
 
 - **(BONUS) Visão geral da diferença entre Regressão Linear e Regressão Logística**
 
-    - Diferente da Regressão Linear, a Regressão Logística não supõe que os dados estão normalizados, que existe linearidade, e homogeneidade de variância. Esse fato torna o uso da Regressão Logística muito mais amigável, fácil, porque raramente essas suposições são satisfeitas no mundo real.
+    - Diferente da Regressão Linear, a Regressão Logística não supõe que os dados estão [normalizados, que existe linearidade, e homogeneidade de variância](https://www.statisticssolutions.com/assumptions-of-linear-regression/). Esse fato torna o uso da Regressão Logística muito mais amigável, fácil, porque raramente essas suposições são satisfeitas no mundo real.
     Se aplicadas numa mesma base de dados, por exemplo sobre notas de participantes do ENEM. A Regressão Linear poderia predizer a pontuação dos participantes, enquanto a Regressão Logística poderia classificar se o participante foi “aprovado” ou “não aprovado”.
 
 ##### B) Estudar e apresentar exemplo de aplicações com algoritmos
