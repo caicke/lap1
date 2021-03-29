@@ -317,7 +317,7 @@ Resultado: <br>
 >#### 5.2 Qual dos algoritmos estudados (não visão do grupo, com base nos resultados obtidos) é o mais recomendado para a base de dados clássica utilizada (explicar):<br>
 >...
 
-Resultado geral:
+Resultado geral: <br>
 ![full_results](./images/full_results.png)
 >#### 5.3 Qual dos algoritmos estudados (não visão do grupo) provavelmente será o mais recomendado para a base de dados em estudo (explicar):<br>
 >...
