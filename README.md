@@ -237,7 +237,7 @@ O modelo de árvore de decisão foi aplicado na base de dados Titanic, com o pr�
 
 Link para o colab: https://colab.research.google.com/drive/1Ij-jIAXwRj1cWMV7I9pRJ0_E-dzli-YO?usp=sharing
 
-Resultado:
+Resultado: <br>
 ![dt_results](./images/dt_results.png)
 <br>
 
@@ -251,7 +251,7 @@ Mapeamento digital de classes e atributos de solos: métodos, paradigmas e novas
 ##### C) Existem requisitos/premissas necessárias para aplicação do algoritmo, quais são?
 ##### D) Aplicar os modelos estudados em bases de dados clássicas como Iris/Titanic
 Acesse este [link](https://colab.research.google.com/drive/1dhdpeSFVO1tkbbfjyxLZ1JV41zMx_-Kj?usp=sharing) para ver o jupyter notebook. <br>
-Resultado:
+Resultado: <br>
 ![rf_results](./images/rf_results.png)
 >#### 5.1.3 Regressão Logística
 ##### A) Explicação sobre o algoritmo/método de classificação adotado
@@ -263,16 +263,17 @@ A Regressão Logística é uma técnica de Regressão que nos permite estimar a 
     - Usa o estimador Máxima Verossimilhança ou (maximum-likelihood estimation- MLE);
 
 - **Função Logística**
-    - A probabilidade de ocorrência de um evento pode ser estimada diretamente. No caso da variável dependente Y assumir apenas dois possíveis estados (1 ou 0) e haver um conjunto de p variáveis independentes X1, X2, …, Xp, o modelo de regressão logística pode ser escrito da seguinte forma:
+    - A probabilidade de ocorrência de um evento pode ser estimada diretamente. No caso da variável dependente Y assumir apenas dois possíveis estados (1 ou 0) e haver um conjunto de p variáveis independentes X1, X2, …, Xp, o modelo de regressão logística pode ser escrito da seguinte forma: <br>
     ![funcao_logistica](./images/funcao_logistica.png)
-    onde, 
+    <br>
+    onde, <br>
     ![g_de_x](./images/g_de_x.png)
 
         - Os coeficientes B0 , B1, ..., Bp são estimados a partir do conjunto de dados, pelo método da máxima verossimilhança, em que encontra uma combinação de coeficientes que maximiza a probabilidade da amostra ter sido observada. Utilizando uma certa combinação de coeficientes B e variando os valores de X, observa-se que a curva logística tem um comportamento probabilístico no formato da letra S, o que é uma característica da regressão logística. [(Hosmer e Lemeshow, 1989, Retirado da USP, 2020)](https://edisciplinas.usp.br/pluginfile.php/3769787/mod_resource/content/1/09_RegressaoLogistica.pdf).
 
-            Sendo assim, quando:
+            Sendo assim, quando: <br>
             ![g_de_x_tendencia](./images/g_de_x_tendencia.png)
-
+            <br>
             ![curva_logistica](./images/curva_logistica.png)
 
 - **Classificação** 
@@ -308,7 +309,7 @@ A Regressão Logística é uma técnica de Regressão que nos permite estimar a 
 
 ##### D) Aplicar os modelos estudados em bases de dados clássicas como Iris/Titanic
 Acesse este [link](https://colab.research.google.com/drive/1dhdpeSFVO1tkbbfjyxLZ1JV41zMx_-Kj?usp=sharing) para ver o jupyter notebook. <br>
-Resultado:
+Resultado: <br>
 ![lr_results](./images/lr_results.png)
 
 
