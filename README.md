@@ -235,7 +235,7 @@ Não foram encontrados requisitos ou restrições para a aplicação do algoritm
 
 O modelo de árvore de decisão foi aplicado na base de dados Titanic, com o pré-processamento já realizado na base de dados. Pode ser observado no link para o colab abaixo:
 
-Link para o colab: https://colab.research.google.com/drive/1Ij-jIAXwRj1cWMV7I9pRJ0_E-dzli-YO?usp=sharing
+Acesse este [link](https://colab.research.google.com/drive/1dhdpeSFVO1tkbbfjyxLZ1JV41zMx_-Kj?usp=sharing) para ver o jupyter notebook.
 
 Resultado: <br>
 ![dt_results](./images/dt_results.png)
