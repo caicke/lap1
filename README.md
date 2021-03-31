@@ -246,9 +246,12 @@ Resultado: <br>
 Mapeamento digital de classes e atributos de solos: métodos, paradigmas e novas técnicas. Disponível em:<https://www.embrapa.br/busca-de-publicacoes/-/publicacao/338308/mapeamento-digital-de-classes-e-atributos-de-solos-metodos-paradigmas-e-novas-tecnicas>. Acessado em: 27/03/2021.
 
 >#### 5.1.2 Random Forest
-##### A) Explicação sobre o algoritmo/método de classificação adotado
+ A) Explicação sobre o algoritmo/método de classificação adotado <br>
+ Em alguns casos, a árvore de decisão pode causar <i>overfitting</i>. Para gerar mais aleatoriedade, utiliza-se uma combinação de árvores de decisões. Para cada nível da árvore, as features da comparação são escolhidas aleatoriamente.
+ 
 ##### B) Estudar e apresentar exemplo de aplicações com algoritmos
-##### C) Existem requisitos/premissas necessárias para aplicação do algoritmo, quais são?
+##### C) Existem requisitos/premissas necessárias para aplicação do algoritmo, quais são? <br>
+O Random Forest funciona tanto em uma base com uma variável dependente contínua, como também em um target categórico. Além disso, ele é mais utilizado em bases com alto número de features.
 ##### D) Aplicar os modelos estudados em bases de dados clássicas como Iris/Titanic
 Acesse este [link](https://colab.research.google.com/drive/1dhdpeSFVO1tkbbfjyxLZ1JV41zMx_-Kj?usp=sharing) para ver o jupyter notebook. <br>
 Resultado: <br>
@@ -317,13 +320,16 @@ Resultado: <br>
 
 
 
->#### 5.2 Qual dos algoritmos estudados (não visão do grupo, com base nos resultados obtidos) é o mais recomendado para a base de dados clássica utilizada (explicar):<br>
->...
+>#### 5.2 Qual dos algoritmos estudados (na visão do grupo, com base nos resultados obtidos) é o mais recomendado para a base de dados clássica utilizada (explicar):<br>
+> Nos nossos testes, o algoritmo de Random Forest obteve a melhor acurácia dentre os três. Ele é o que consome o maior tempo de execução, porém achamos mais indicado utlizar ele na nossa base clássica. 
 
 Resultado geral: <br>
 ![full_results](./images/full_results.png)
 >#### 5.3 Qual dos algoritmos estudados (não visão do grupo) provavelmente será o mais recomendado para a base de dados em estudo (explicar):<br>
->...
+>Na nossa base de estudo, fizemos um teste rápido e vimos que a árvore de decisão obteve o melhor desempenho. Porém, vale salientar que a nossa base de estudos está com uma formatação provisória, com bem menos atributos, para facilitar os testes dos algoritmos.<br>
+![depr_arv](https://user-images.githubusercontent.com/37307708/113079394-54054a00-91ab-11eb-9906-b6b93c555f61.png)
+
+>Quando modificarmos o restante dos atributos para realizar uma predição mais detalhada, iremos refazer os testes.
 
 
 ># Marco de Entrega 02: Itens do Sprint 02 <br>
