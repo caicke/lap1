@@ -247,9 +247,26 @@ Mapeamento digital de classes e atributos de solos: métodos, paradigmas e novas
 
 >#### 5.1.2 Random Forest
  A) Explicação sobre o algoritmo/método de classificação adotado <br>
- Em alguns casos, a árvore de decisão pode causar <i>overfitting</i>. Para gerar mais aleatoriedade, utiliza-se uma combinação de árvores de decisões. Para cada nível da árvore, as features da comparação são escolhidas aleatoriamente.
+ Em alguns casos, a árvore de decisão pode causar <i>overfitting</i> - O algoritmo acaba "memorizando" a base de treino e acaba se ajustando muito ao modelo. Isso acaba o tornando ineficaz para outros cenários mais aleatórios. Logo, para gerar mais aleatoriedade nos dados a fim de se conseguir uma predição mais abrangente, o Random Forest utiliza uma combinação de árvores de decisões.
+ 
+ ![maxresdefault](https://user-images.githubusercontent.com/37307708/113080783-d68f0900-91ad-11eb-898f-4f5b6fbfbafe.jpg)
+ O algoritmo cria um sample dos dados para cada árvore da combinação, em um método como <i>bootstraping</i>, fazendo com que o treinamento da base seja realizado com uma "sub-base" diferente. Além disso, o Random Forest completa os dados que estão faltando no dataset.
+ No teste, para cada árvore, as features da comparação são escolhidas aleatoriamente. A predição escolhida é a moda dos resultados de cada árvore de decisão, ou seja, ele escolhe a classificação da maioria como sendo a predição final.
+ 
+ Apesar de reduzir o overfitting e ser bem flexível quanto à natureza dos problemas, ele é mais custoso computacionalmente e possui uma complexidade maior em relação a outros algoritmos.
+ 
+ ![complx_rand_for](https://user-images.githubusercontent.com/37307708/113082344-ad23ac80-91b0-11eb-89ca-37fdd64cd207.png)
+
  
 ##### B) Estudar e apresentar exemplo de aplicações com algoritmos
+Uma das aplicações do Random Forest é a predição e classificação de movimentos no Kinect, do Xbox.
+Nos jogos de dança, por exemplo, o algoritmo classifica o movimento capturado pelo Kinect e classifica em estrelas de acordo com o movimento correto, que foi inserido como entrada de teste no modelo. 
+[Kinect e Random Forest](https://www.i-programmer.info/news/105-artificial-intelligence/2176-kinects-ai-breakthrough-explained.html)
+
+![applications-of-random-forest](https://user-images.githubusercontent.com/37307708/113082415-cdec0200-91b0-11eb-9f3f-a5641185efb8.jpg)
+
+Além disso, ele é utilizado em análise de créditos de risco, predição de estoque em mercados, etc.
+
 ##### C) Existem requisitos/premissas necessárias para aplicação do algoritmo, quais são? <br>
 O Random Forest funciona tanto em uma base com uma variável dependente contínua, como também em um target categórico. Além disso, ele é mais utilizado em bases com alto número de features.
 ##### D) Aplicar os modelos estudados em bases de dados clássicas como Iris/Titanic
