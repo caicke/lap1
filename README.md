@@ -338,26 +338,49 @@ Resultado: <br>
 
 
 >#### 5.2 Qual dos algoritmos estudados (na visão do grupo, com base nos resultados obtidos) é o mais recomendado para a base de dados clássica utilizada (explicar):<br>
-> Nos nossos testes, o algoritmo de Random Forest obteve a melhor acurácia dentre os três. Ele é o que consome o maior tempo de execução, porém achamos mais indicado utlizar ele na nossa base clássica. 
+Nos nossos testes, o algoritmo de Random Forest obteve a melhor acurácia dentre os três. Ele é o que consome o maior tempo de execução, porém achamos mais indicado utlizar ele na nossa base clássica. 
 
 Resultado geral: <br>
 ![full_results](./images/full_results.png)
->#### 5.3 Qual dos algoritmos estudados (não visão do grupo) provavelmente será o mais recomendado para a base de dados em estudo (explicar):<br>
->Na nossa base de estudo, fizemos um teste rápido e vimos que a árvore de decisão obteve o melhor desempenho. Porém, vale salientar que a nossa base de estudos está com uma formatação provisória, com bem menos atributos, para facilitar os testes dos algoritmos.<br>
+>#### 5.3 Qual dos algoritmos estudados (na visão do grupo) provavelmente será o mais recomendado para a base de dados em estudo (explicar):<br>
+Na nossa base de estudo, fizemos um teste rápido e vimos que a árvore de decisão obteve o melhor desempenho. Porém, vale salientar que a nossa base de estudos está com uma formatação provisória, com bem menos atributos, para facilitar os testes dos algoritmos.<br>
 ![depr_arv](https://user-images.githubusercontent.com/37307708/113079394-54054a00-91ab-11eb-9906-b6b93c555f61.png)
 
->Quando modificarmos o restante dos atributos para realizar uma predição mais detalhada, iremos refazer os testes.
+Quando modificarmos o restante dos atributos para realizar uma predição mais detalhada, iremos refazer os testes.
 
 
 ># Marco de Entrega 02: Itens do Sprint 02 <br>
 >
 
-### 6.Implementar método no dataset em estudo  (explicação + datasets)<br>
-    A) Explicação sobre o processo de aplicação dos algotítmos em estudo 
+### 6. Implementar método no dataset em estudo  (explicação + datasets)<br>
+    A) Explicação sobre o processo de aplicação dos algotítmos em estudo
     no conjunto de dados em estudo (passos necessários/realizados)
     B) Implementar método nos datasets utilizados comparar resultados obtidos 
     e validar ou descartar hipótese do ítem 5.1 e 5.2.
     
+##### A) Explicação sobre o processo de aplicação dos algotítmos em estudo no conjunto de dados em estudo (passos necessários/realizados)
+Conforme prometido nas sprints anteriores, fizemos as alterações recomendadas pelo prof. Moises Omena afim de ter um modelo mais confiável na classificação do transtorno.
+- **Sugestão do professor:** ao invés de remover todos os valores nulos, preencha com valores nulos com a média, e faça o teste para 30 características.
+Portanto, abordaremos passos bem iniciais já apresentados porém atualizados e de forma reduzida.
+
+1) Preechendo os valores NaN: 
+Percorremos o dataset procurando por colunas que possuam algum valor nulo, quando a condição é satisfeita, os valores nulos de uma coluna são preenchidos com a "média arredondada". O motivo é que apesar dos valores serem numéricos, são na verdade nominais se considerarmos as questões da entrevista, cada número tem significado diferente.
+![fillna_mean_round](./images/fillna_mean_round.png)
+Ainda assim algumas colunas que são totalmente populadas por NaN permanecem no dataset, elas foram removidas por completo.
+**Resultado etapa 1:** Redução de 337 atribtos para 318.
+2) Remoção de Outliers:
+Essa etapa foi manual, entendemos que apenas alguns dos dados estavam representados em categorias de dados diferentes, sendo assim removemos as linhas em que isso acontecia.
+**Resultado etapa 2:** Redução de 5037 registros para 4223.
+3) Balanceamento do Dataset: São 768 registros para diagnóstico positivo e 3455 para diagnóstico negativo. 
+**Resultado etapa 3:** Feito o oversampling obtivemos 6910 registros.
+4) Seleção de características: 
+Novamente usamos a combinação de KBest com chi2. Dessa vez possuimos características de depressão, selecionamos 20 e não 30 porque o modelo não convergiu para 30.
+**Resultado etapa 4:** As 20 características são ``['D12', 'D21', 'D22B', 'D22C', 'D22D', 'D26F', 'D29', 'D37C', 'D37F_2', 'D38A_3A_', 'D54', 'D87_1', 'SC21', 'SC22', 'SC23', 'CC4', 'CC5', 'CC31A', 'CC34', 'CC49B']``
+
+Agora voltando ao item **A)** de fato, não foi necessário aplicar nenhum preprocessamento específicos para os novos classificadores, sendo assim nós só importamos e usamos, sem fazer qualquer tunning.
+
+![s3_full_results](./images/s3_full_results.png)
+
 >#### 6.1 Detalhamento dos processos de classificação com base nos algoritmos na base de dados em estudo:<br>
 >...
 >
@@ -367,10 +390,11 @@ Resultado geral: <br>
     B) Definir quais trabalhos futuros podem ser realizados a partir das conclusões obtidas e tarefas realizadas.
     
 >#### 7.1 Conclusões com base nos resultados obtidos:<br>
->...
+**Hellesandro:** O processo de Machine Learning é um processo que demanda muito cuidado e atenção em cada passo desde o pré processamento até o ajuste dos hyperparamentros. No início do trabalho com o dataset em estudo, optamos por uma abordagem bastante arriscada e que até rendeu algum resultado, mas que foi superado por uma abordagem que respeitou melhor o objetivo da classificação do modelo.
+
 >#### 7.2 Trabalhos futuros:<br>
->...
->
+Tratamento melhor de *outliers*, o dataset em estudo possui basntante campos com valor fora do domínio. Optamos resolver parcialmente este problema apenas para algumas características que usamos.
+
 ### 8. Resultados e Artefatos
 >#### 8.1 Slides Finais
 >#### 8.3 Demais artefatos solicitados pelo professor
