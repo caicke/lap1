@@ -418,7 +418,7 @@ Ao realizar a análise dos resultados obtidos após a utilização da técnica d
 >#### 7.1 Conclusões com base nos resultados obtidos:<br>
 **Hellesandro:** O processo de Machine Learning é um processo que demanda muito cuidado e atenção em cada passo desde o pré processamento até o ajuste dos hyperparamentros. No início do trabalho com o dataset em estudo, optamos por uma abordagem bastante arriscada e que até rendeu algum resultado, mas que foi superado por uma abordagem que respeitou melhor o objetivo da classificação do modelo.
 
-**Eduardo:** É preciso tomar as devidas preucações antes de começar um projeto de Machine Learning. Dando uma atenção especial no pré-processamento de dados, pois na maioria das vezes, o dataset se apresenta com muitos problemas, onde terá que ser resolvido no pré-processamento. Além de, se fazer a escolha do algoritmo, com os devidos ajustes de hiperparâmetros, que melhor se adeque ao seu dataset. Para o primeiro resultado realizado pelo grupo, acreditamos que os resultados se mostraram satisfatórios.
+**Eduardo:** É preciso tomar as devidas preucauções antes de começar um projeto de Machine Learning. Dando uma atenção especial no pré-processamento de dados, pois na maioria das vezes, o dataset se apresenta com muitos problemas, onde terá que ser resolvido no pré-processamento. Além de, se fazer a escolha do algoritmo, com os devidos ajustes de hiperparâmetros, que melhor se adeque ao seu dataset. Para o primeiro resultado realizado pelo grupo, acreditamos que os resultados se mostraram satisfatórios.
 
 >#### 7.2 Trabalhos futuros:<br>
 Tratamento melhor de *outliers*, o dataset em estudo possui basntante campos com valor fora do domínio. Optamos resolver parcialmente este problema apenas para algumas características que usamos.
@@ -427,6 +427,13 @@ Realizar análises mais profundas do dataset em específico durante o pré-proce
 
 ### 8. Resultados e Artefatos
 >#### 8.1 Slides Finais
+
+-Resultados do Titanic
+![s3_full_results](https://github.com/caicke/lap1/blob/main/images/resultados-titanic.png)
+
+-Resultados do Depressão
+![s3_full_results](https://github.com/caicke/lap1/blob/main/images/resultados-depressao.png)
+
 >#### 8.3 Demais artefatos solicitados pelo professor
 
 
