@@ -428,10 +428,10 @@ Realizar análises mais profundas do dataset em específico durante o pré-proce
 ### 8. Resultados e Artefatos
 >#### 8.1 Slides Finais
 
--Resultados do Titanic
+**Resultados do Titanic**
 ![s3_full_results](https://github.com/caicke/lap1/blob/main/images/resultados-titanic.png)
 
--Resultados do Depressão
+**Resultados do Depressão**
 ![s3_full_results](https://github.com/caicke/lap1/blob/main/images/resultados-depressao.png)
 
 >#### 8.3 Demais artefatos solicitados pelo professor
