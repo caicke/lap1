@@ -357,7 +357,8 @@ Quando modificarmos o restante dos atributos para realizar uma predição mais d
     no conjunto de dados em estudo (passos necessários/realizados)
     B) Implementar método nos datasets utilizados comparar resultados obtidos 
     e validar ou descartar hipótese do ítem 5.1 e 5.2.
-    
+
+**Dataset em ESTUDO**
 ##### A) Explicação sobre o processo de aplicação dos algotítmos em estudo no conjunto de dados em estudo (passos necessários/realizados)
 Conforme prometido nas sprints anteriores, fizemos as alterações recomendadas pelo prof. Moises Omena afim de ter um modelo mais confiável na classificação do transtorno.
 - **Sugestão do professor:** ao invés de remover todos os valores nulos, preencha com valores nulos com a média, e faça o teste para 30 características.
@@ -381,6 +382,31 @@ Agora voltando ao item **A)** de fato, não foi necessário aplicar nenhum prepr
 
 ![s3_full_results](./images/s3_full_results.png)
 
+**Dataset CLÁSSICO**
+##### A) Explicação sobre o processo de aplicação dos algotítmos em estudo no conjunto de dados clássico (passos necessários/realizados)
+Antes dos algoritmos em estudo serem aplicados na base dados Titanic, foi realizado o pré-processamento nesta base de dados. Sendo utilizados as seguintes técnicas:
+- Imputação de valores baseados na média de uma coluna;
+- Exclusão de colunas com alta cardinalidade(valores totalmente distintos);
+- Exclusão de colunas com muitos valores nulos;
+- <i>One Hot Encoding</i>;
+- <i>Label Encoder</i>;
+- Binnig;
+- Balanceamento de dados.
+
+Feito isso, foram aplicados os algoritmos em estudo no dataset clássico manualmente e obtidos os seguintes resultados:
+- Treino: 0.8046 e Teste: 0.8 no algoritmo de Regressão Logística;
+- Treino: 0.9882 e Teste: 0.8303 no algoritmo de Árvore de decisão;
+- Treino: 0.9882 e Teste: 0.8484 no algoritmo de Random Forest.
+
+Analisando os resultados e constatando de um possível overfitting, foi realizado a técnica de k-fold e obtido então os seguintes resultados:
+- Treino: 0.7676 e Teste: 0.7954 no algoritmo de Regressão Logística;
+- Treino: 0.9031 e Teste: 0.9090 no algoritmo de Árvore de decisão;
+- Treino: 0.9031 e Teste: 0.9 no algoritmo de Random Forest.
+
+Ao realizar a análise dos resultados obtidos após a utilização da técnica de k-fold, pode-se afirmar que o algoritmo de árvore de decisão foi o melhor para este dataset em específico, sendo feito os ajustes necessários de forma manual. Porém, ao aplicarmos o AutoML com o Auto-sklearn, os resultados se mostram de forma diferente. Apontando o algoritmo de Regresssão Logística como o melhor para o dataset. Como é mostrado na figura abaixo:
+
+![s3_full_results](./images/s3_full_results.png)
+
 >#### 6.1 Detalhamento dos processos de classificação com base nos algoritmos na base de dados em estudo:<br>
 >...
 >
@@ -392,8 +418,12 @@ Agora voltando ao item **A)** de fato, não foi necessário aplicar nenhum prepr
 >#### 7.1 Conclusões com base nos resultados obtidos:<br>
 **Hellesandro:** O processo de Machine Learning é um processo que demanda muito cuidado e atenção em cada passo desde o pré processamento até o ajuste dos hyperparamentros. No início do trabalho com o dataset em estudo, optamos por uma abordagem bastante arriscada e que até rendeu algum resultado, mas que foi superado por uma abordagem que respeitou melhor o objetivo da classificação do modelo.
 
+**Eduardo:** É preciso tomar as devidas preucações antes de começar um projeto de Machine Learning. Dando uma atenção especial no pré-processamento de dados, pois na maioria das vezes, o dataset se apresenta com muitos problemas, onde terá que ser resolvido no pré-processamento. Além de, se fazer a escolha do algoritmo, com os devidos ajustes de hiperparâmetros, que melhor se adeque ao seu dataset. Para o primeiro resultado realizado pelo grupo, acreditamos que os resultados se mostraram satisfatórios.
+
 >#### 7.2 Trabalhos futuros:<br>
 Tratamento melhor de *outliers*, o dataset em estudo possui basntante campos com valor fora do domínio. Optamos resolver parcialmente este problema apenas para algumas características que usamos.
+
+Realizar análises mais profundas do dataset em específico durante o pré-processamento, para poder evitar assim um overfitting. Como foi ocorrido no dataset clássico e tratado com a utilização da técnica k-fold.
 
 ### 8. Resultados e Artefatos
 >#### 8.1 Slides Finais
