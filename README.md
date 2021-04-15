@@ -390,7 +390,7 @@ Antes dos algoritmos em estudo serem aplicados na base dados Titanic, foi realiz
 - Exclusão de colunas com muitos valores nulos;
 - <i>One Hot Encoding</i>;
 - <i>Label Encoder</i>;
-- Binnig;
+- Binning;
 - Balanceamento de dados.
 
 Feito isso, foram aplicados os algoritmos em estudo no dataset clássico manualmente e obtidos os seguintes resultados:
@@ -408,8 +408,7 @@ Ao realizar a análise dos resultados obtidos após a utilização da técnica d
 ![s3_full_results](https://github.com/caicke/lap1/blob/main/images/autoML%20-%20Titanic.png)
 
 >#### 6.1 Detalhamento dos processos de classificação com base nos algoritmos na base de dados em estudo:<br>
->...
->
+
 
 ### 7.Análise dos resultados obtidos <br>
     A) Detalhar conclusões com base nos resultados obtidos
