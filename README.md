@@ -405,7 +405,7 @@ Analisando os resultados e constatando de um possível overfitting, foi realizad
 
 Ao realizar a análise dos resultados obtidos após a utilização da técnica de k-fold, pode-se afirmar que o algoritmo de árvore de decisão foi o melhor para este dataset em específico, sendo feito os ajustes necessários de forma manual. Porém, ao aplicarmos o AutoML com o Auto-sklearn, os resultados se mostram de forma diferente. Apontando o algoritmo de Regresssão Logística como o melhor para o dataset. Como é mostrado na figura abaixo:
 
-![s3_full_results](./images/s3_full_results.png)
+![s3_full_results](https://github.com/caicke/lap1/blob/main/images/autoML%20-%20Titanic.png)
 
 >#### 6.1 Detalhamento dos processos de classificação com base nos algoritmos na base de dados em estudo:<br>
 >...
