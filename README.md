@@ -375,7 +375,7 @@ Essa etapa foi manual, entendemos que apenas alguns dos dados estavam representa
 **Resultado etapa 3:** Feito o oversampling obtivemos 6910 registros.
 4) Seleção de características: 
 Novamente usamos a combinação de KBest com chi2. Dessa vez possuimos características de depressão, selecionamos 20 e não 30 porque o modelo não convergiu para 30.
-**Resultado etapa 4:** As 20 características são ``['D12', 'D21', 'D22B', 'D22C', 'D22D', 'D26F', 'D29', 'D37C', 'D37F_2', 'D38A_3A_', 'D54', 'D87_1', 'SC21', 'SC22', 'SC23', 'CC4', 'CC5', 'CC31A', 'CC34', 'CC49B']``
+**Resultado etapa 4:** As 20 características são ``['D12', 'D26F', 'D37C', 'D37F_2', 'D54', 'D68', 'D87_1', 'SC20', 'SC21', 'SC22', 'SC23', 'SC25', 'SC26', 'CC3A', 'CC4', 'CC5', 'CC31A', 'CC33', 'CC34', 'CC49B']``
 
 Agora voltando ao item **A)** de fato, não foi necessário aplicar nenhum preprocessamento específicos para os novos classificadores, sendo assim nós só importamos e usamos, sem fazer qualquer tunning.
 
