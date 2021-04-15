@@ -420,6 +420,8 @@ Ao realizar a análise dos resultados obtidos após a utilização da técnica d
 
 **Eduardo:** É preciso tomar as devidas preucauções antes de começar um projeto de Machine Learning. Dando uma atenção especial no pré-processamento de dados, pois na maioria das vezes, o dataset se apresenta com muitos problemas, onde terá que ser resolvido no pré-processamento. Além de, se fazer a escolha do algoritmo, com os devidos ajustes de hiperparâmetros, que melhor se adeque ao seu dataset. Para o primeiro resultado realizado pelo grupo, acreditamos que os resultados se mostraram satisfatórios.
 
+**Caicke:** Realmente conhecer e se aprofundar na base de dados antes de sair fazendo código e testando algoritmos é essencial. Uma coisa que ficou bem clara para mim também é que, nem sempre, uma alta acurácia é sinônimo de um bom algoritmo. Nossa apresentação na última semana exemplificou bem isso. Nosso algoritmo estava com uma acurácia muito alta, porém os atributos selecionados não necessariamente eram os mais indicados para obter boas relações entre os dados. Mas no geral, fiquei bem satisfeito com nosso aprendizado, deu para realmente colocar a mão na massa, tomar erros (o que também é importante) e tirar boas conclusões.
+
 >#### 7.2 Trabalhos futuros:<br>
 Tratamento melhor de *outliers*, o dataset em estudo possui basntante campos com valor fora do domínio. Optamos resolver parcialmente este problema apenas para algumas características que usamos.
 
